@@ -61,7 +61,7 @@ class ImagePicker : Fragment() {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
             intent.addCategory(Intent.CATEGORY_OPENABLE)
-            // Aparat
+            
                pickImageLauncher.launch(Intent.createChooser(intent, "Pick from gallery"))
         }
 
