@@ -4,7 +4,7 @@ This Android mobile application is part of the research described in the accompa
 
 It implements a deep learning–based classifier to support the assessment of cataracts using ocular images.
 
->The study utilizes the [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2) classified using LOCS III and proposes a mobile inference pipeline that incorporates automatic pupil marking, preprocessing, and classification into one user-friendly tool.
+>The study utilizes the [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2) classified using LOCS III and proposes a mobile inference pipeline that incorporates pupil marking, preprocessing, and classification into one user-friendly tool.
 
 ## Dataset 
 To achieve the highest possible accuracy of neural network models, images classified from 1 to 6 the NC grade, consistent with the LOCS III scale, were used for training and evaluation. Due to insufficient cataract visibility, image blurriness, or poor illumination of 267 the pathological area, a specialist selected images that accurately represented the degree of advancement.
