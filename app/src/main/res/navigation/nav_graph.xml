@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.aicataractdetector.SplashFragment"
+        android:label="Ekran powitalny"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_imagePickerFragment"
+            app:destination="@id/imagePickerFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/imagePickerFragment"
+        android:name="com.example.aicataractdetector.ImagePicker"
+        android:label="Wybierz zdjęcie"
+        tools:layout="@layout/fragment_image_picker">
+        <action
+            android:id="@+id/action_imagePickerFragment_to_pupilMarkerFragment"
+            app:destination="@id/pupilMarkerFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/pupilMarkerFragment"
+        android:name="com.example.aicataractdetector.PupilMarker"
+        android:label="Zaznacz źrenicę"
+        tools:layout="@layout/fragment_pupil_marker">
+        <argument
+            android:name="imageUri"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_pupilMarkerFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment">
+            <argument
+                android:name="imageUri"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.aicataractdetector.LoadingFragment"
+        android:label="Loading"
+        tools:layout="@layout/layout_progress_overlay">
+
+        <action
+            android:id="@+id/action_loadingFragment_to_classificationResultFragment"
+            app:destination="@id/classificationResultFragment">
+            <argument android:name="imageUri" app:argType="string" app:nullable="false" />
+            <argument android:name="labels" app:argType="string[]" app:nullable="false" />
+            <argument android:name="scores" app:argType="float[]" app:nullable="false" />
+            <argument android:name="classificationTimeMillis" app:argType="long" app:nullable="false" />
+        </action>
+
+
+        <action
+            android:id="@+id/action_loadingFragment_to_classificationResultNuclearFragment"
+            app:destination="@id/classificationResultNuclearFragment">
+            <argument android:name="imageUri" app:argType="string" app:nullable="false" />
+            <argument android:name="labels" app:argType="string[]" app:nullable="false" />
+            <argument android:name="scores" app:argType="float[]" app:nullable="false" />
+            <argument android:name="stageLabels" app:argType="string[]" app:nullable="true" />
+            <argument android:name="stageScores" app:argType="float[]" app:nullable="true" />
+            <argument android:name="stageTitle" app:argType="string" app:nullable="true" />
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/classificationResultFragment"
+        android:name="com.example.aicataractdetector.ui.ClassificationResult"
+        android:label="Classification Result"
+        tools:layout="@layout/fragment_classification_result">
+        <argument android:name="imageUri" app:argType="string" app:nullable="false" />
+        <argument android:name="labels" app:argType="string[]" app:nullable="false" />
+        <argument android:name="scores" app:argType="float[]" app:nullable="false" />
+        <argument android:name="classificationTimeMillis" app:argType="long" app:nullable="false" />
+        <action
+            android:id="@+id/action_classificationResultFragment_to_imagePickerFragment"
+            app:destination="@id/imagePickerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/classificationResultNuclearFragment"
+        android:name="com.example.aicataractdetector.ui.ClassificationResultNC"
+        android:label="NuclearResult"
+        tools:layout="@layout/fragment_classification_result_nuclear">
+        <argument android:name="imageUri" app:argType="string" app:nullable="false" />
+        <argument android:name="labels" app:argType="string[]" app:nullable="false" />
+        <argument android:name="scores" app:argType="float[]" app:nullable="false" />
+        <argument android:name="stageLabels" app:argType="string[]" app:nullable="true" />
+        <argument android:name="stageScores" app:argType="float[]" app:nullable="true" />
+        <argument android:name="stageTitle" app:argType="string" app:nullable="true" />
+        <argument
+            android:name="classificationTimeMillis"
+            app:argType="long"
+            android:defaultValue="0L" />
+
+        <action
+            android:id="@+id/action_classificationResultNuclearFragment_to_imagePickerFragment"
+            app:destination="@id/imagePickerFragment" />
+    </fragment>
+</navigation>
