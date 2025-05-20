@@ -6,6 +6,8 @@ It implements a deep learning–based classifier to support the assessment of ca
 
 >The study utilizes the [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2) classified using LOCS III and proposes a mobile inference pipeline that incorporates pupil marking, preprocessing, and classification into one user-friendly tool.
 
+<b> Authors </b> : Alicja Ignaczowicz, Tomasz Marciniak, Elżbieta Marciniak
+
 ## Dataset 
 To achieve the highest possible accuracy of neural network models, images classified from 1 to 6 the NC grade, consistent with the LOCS III scale, were used for training and evaluation. Due to insufficient cataract visibility, image blurriness, or poor illumination of 267 the pathological area, a specialist selected images that accurately represented the degree of advancement.
 
@@ -112,23 +114,6 @@ The application performs all inference **locally on-device** (no internet requir
 </table>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Download APK 
 
 > ⚠️ Disclaimer - v1.0.0 - This is an early prototype of the application for academic research only. It's not optimized for production, and the APK file size is large (~700 MB) because it includes an uncompressed deep learning model.
@@ -139,5 +124,7 @@ To install the app on Android, allow installations from unknown sources in setti
 
 ## License and Disclaimer
 
-
 This application is intended for research and academic demonstration purposes only. It is **not a certified medical diagnostic tool** and should not be used for clinical decision-making.
+
+## Citation
+Ignatowicz A.;Marciniak T.; Marciniak E., AI-Powered Mobile App for Cataract Detection - <b>To be published</b>
