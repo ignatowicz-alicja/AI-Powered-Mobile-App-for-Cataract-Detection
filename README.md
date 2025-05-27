@@ -1,4 +1,4 @@
-# AI-Powered Mobile App for Cataract Detection
+# AI-Powered Mobile App for Nuclear Cataract Detection
 
 This Android mobile application is part of the research described in the accompanying scientific article.  
 
