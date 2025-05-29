@@ -11,7 +11,7 @@ It implements a deep learning–based classifier to support the assessment of ca
 <b> Authors </b> : Alicja Ignaczowicz, Tomasz Marciniak, Elżbieta Marciniak
 
 ## Dataset 
-Dataset is selected from [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2). Detailed list of selected files is given in
+Dataset is selected from [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2). Detailed list of selected files is given in NC_images_used_for_evaluation.xlsx.
 
 ## Extraction of region-of-interest (ROI) and image preprocessing
 
@@ -20,10 +20,9 @@ Preprocessing steps:
 - cropping, ensuring proper centering,
 - resized 224x224.
 
-
 ## Binary classification and neural network model conversion to TensorFlow Lite
 The classification involves binary anomaly detection via autoencoder, followed by CNN classification.
-The trained model was first saved as **`model.pth`** (PyTorch), it had been optimised to **`model.tflite`** for use on mobile devices.
+The trained model was saved as model.pth (PyTorch) and later converted and optimized to model.tflite for mobile deployment.
 Among all tested architectures, **VGG11** achieved the best accuracy after conversion to TFLite, so this variant was selected for the nuclear-cataract classifier in the Android app.
 
 
