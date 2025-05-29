@@ -11,12 +11,7 @@ It implements a deep learning–based classifier to support the assessment of ca
 <b> Authors </b> : Alicja Ignaczowicz, Tomasz Marciniak, Elżbieta Marciniak
 
 ## Dataset 
-To achieve the highest possible accuracy of neural network models, images classified from 1 to 6 the NC grade, consistent with the LOCS III scale, were used for training and evaluation. Due to insufficient cataract visibility, image blurriness, or poor illumination of the pathological area, a specialist selected images that accurately represented the degree of advancement.
-
-<b>Number of images from the Nuclear Cataract Database compared to a number of images used in the experiment.</b>
-<p align="center">
-  <img src="table/dataset .png" width="500"/>
-</p>
+Dataset is selected from [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2). Detailed list of selected files is given in
 
 ## Extraction of region-of-interest (ROI) and image preprocessing
 
@@ -26,22 +21,10 @@ Preprocessing steps:
 - resized 224x224.
 
 
-## Anomaly detection using autoencoder
-
-The first stage of classification involved binary classification of images into cataract and non-cataract categories. Images from the Nuclear Cataract database classified as the IOL, were used for the non-cataract class.
-Before implementing the autoencoder, the data underwent preprocessing, outlined in the previous section. The autoencoder model features a convolutional encoder that consists of four convolutional layers, each followed by a ReLU activation function. Similarly, the decoder is composed of four deconvolutional layers, with each layer also incorporating a ReLU activation function.
-
-
-## Selection of Neural Network 
-
-Selected dataset was split into 80\% training set, 10\% validation set and 10\% testing set. Additionally, to ensure the network learns from all classes, the dataset splitting is stratified, thereby preserving the class proportions within each subset.
-Furthermore, data augmentation techniques were employed, including random horizontal flip with a probability of 0.5, random rotation from -15 to +15 degrees, and color jitter randomly adjusting brightness and contrast by a factor of up to 0.2. Subsequently, the images were converted to tensors and normalised using ImageNet statistics.
-
-## Neural network model conversion to TensorFlow Lite
-
-The trained neural network model was saved in the .pth format from PyTorch. It was first exported to the ONNX format, then converted to a TensorFlow model, and finally transformed into the .tflite format for compatibility with mobile devices.
-VGG11 achieved the best classification quality metrics and highest accuracy in the TFLite format among all analyzed models. Consequently, this model was selected and implemented in the mobile application for nuclear cataract classification.
-
+## Binary classification and neural network model conversion to TensorFlow Lite
+The classification involves binary anomaly detection via autoencoder, followed by CNN classification.
+The trained model was first saved as **`model.pth`** (PyTorch), it had been optimised to **`model.tflite`** for use on mobile devices.
+Among all tested architectures, **VGG11** achieved the best accuracy after conversion to TFLite, so this variant was selected for the nuclear-cataract classifier in the Android app.
 
 
 ## Android-Based Application
