@@ -2,15 +2,14 @@
 
 This Android mobile application is part of the research described in the accompanying scientific article.  
 
-Author: Alicja Ignatowicz
-
+Author: Alicja Anna Ignatowicz
 Supervision: Tomasz Marciniak
 
 It implements a deep learning–based classifier to support the assessment of cataracts using ocular images.
 
 >The study utilizes the [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2) classified using LOCS III and proposes a mobile inference pipeline that incorporates pupil marking, preprocessing, and classification into one user-friendly tool.
 
-<b> Authors </b> : Alicja Ignaczowicz, Tomasz Marciniak, Elżbieta Marciniak
+<b> Authors </b> : Alicja Anna Ignaczowicz, Tomasz Marciniak, Elżbieta Marciniak
 
 ## Dataset 
 Dataset is selected from [The Nuclear Cataract Database for Biomedical and Machine Learning Applications](https://data.mendeley.com/datasets/6wv33nbcvv/2). Detailed list of selected files is given in NC_images_used_for_evaluation.xlsx.
